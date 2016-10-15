@@ -29,7 +29,19 @@ public:
 	bool ListenNewConnections();
 
 private:
-	void ClientHandlerThread();
+	
+	bool SendAll(int ID, char* data, int totalBytes);
+	bool RecvAll(int ID, char* data, int totalBytes);
+	bool SendInt32_t(int ID, int32_t _int);
+	bool GetInt32_t(int ID, int32_t &_int);
+	bool SendPacketType(int ID, PacketType _packetType);
+	bool GetPacketType(int ID, PacketType &_packetType);
+	bool SendString(int ID, std::string &_string);
+	bool GetString(int ID, std::string &_string);
+	
+	bool ProcessPacket(int ID, PacketType _packetType);
+	bool HandleSendFile(int ID);
+	static void ClientHandlerThread(int ID);
 
 	Connection m_connections[100];
 	int m_totalConnections = 0;
