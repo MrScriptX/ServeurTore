@@ -1,4 +1,5 @@
-#ifndef file_data.h
+#ifndef FILE_DATA_H
+#define FILE_DATA_H
 
 #include <fstream>
 

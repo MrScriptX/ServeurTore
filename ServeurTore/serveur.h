@@ -1,4 +1,5 @@
-#ifndef serveur.h
+#ifndef SERVEUR_H
+#define SERVEUR_H
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
 #pragma comment(lib, "ws2_32.lib")

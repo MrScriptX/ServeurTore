@@ -1,31 +1,14 @@
 #include <iostream>
 #include "serveur.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-	int broadCast{ 0 };
 	
-	std::cin >> broadCast;
-
-	if (broadCast == 0)
+	Server MyServer(1111); //Create server on port 100
+	for (int i = 0; i < 100; i++) //Up to 100 times...
 	{
-		Server localServ(1111);//local server
-
-		for (int i = 0; i < 100; i++)
-		{
-			localServ.ListenNewConnections();
-		}
+		MyServer.ListenNewConnections(); //Accept new connection (if someones trying to connect)
 	}
-	else if (broadCast == 1)
-	{
-		Server publicServ(1111, true);//public server
-
-		for (int i = 0; i < 100; i++)
-		{
-			publicServ.ListenNewConnections();
-		}
-	}
-
 	system("pause");
 	return 0;
 }
