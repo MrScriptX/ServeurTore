@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="client.h" />
     <ClInclude Include="file_data.h" />
+    <ClInclude Include="ressource.h" />
     <ClInclude Include="serveur.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,16 +1,16 @@
 #pragma once
 
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
-
-#include <string>
-#include "WinSock2.h"
-
-#pragma comment(lib,"ws2_32.lib") 
+#include "ressource.h"
 
 class Client
 {
 public:
 	Client(std::string IP, int port);
+	
+	void Send_PacketType(PacketType _packet);
+	void Get_PacketType(PacketType _packet);
+	void Send_message(std::string msg);
+	void Send_Int32_t(int32_t _int);
 
 
 private:
